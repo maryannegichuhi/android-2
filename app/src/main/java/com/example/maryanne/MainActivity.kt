@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -47,15 +48,16 @@ fun demo(){
 
 
 
-    Column (modifier = Modifier.fillMaxSize()){
+    Column (modifier = Modifier.fillMaxSize()
+                       .background(Color.Gray)){
 
-            Text("Hello Maryanne \uD83D\uDE0A ", color = Color.Gray,
+            Text("Hello Maryanne \uD83D\uDE0A ", color = Color.Black,
             fontSize =30.sp,
             fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
             textDecoration = TextDecoration.Underline)
 
         Text(text = "Welcome to Android",
-            color = Color.DarkGray,
+            color = Color.White,
             fontSize = 30.sp,
             fontFamily = FontFamily.Cursive)
         Text(text = "Kotlin",

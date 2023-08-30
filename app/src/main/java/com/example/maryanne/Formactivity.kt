@@ -14,9 +14,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Call
@@ -86,7 +88,8 @@ fun myForm(){
         mutableStateOf("") }
         
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize()
+        .verticalScroll(rememberScrollState())) {
         //TopAppBar
         TopAppBar({ Text(text = "Form", fontWeight = FontWeight.Bold,
             fontSize = 20.sp)}, colors = TopAppBarDefaults.largeTopAppBarColors(Color.Gray),
@@ -251,6 +254,17 @@ fun myForm(){
                     fontSize = 20.sp,
                     color = Color.Blue,
                     modifier = Modifier.padding(30.dp))
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                //Intent
+                Button(onClick = {
+                    mContext.startActivity(Intent(mContext,IntentActivity::class.java))
+                }, shape = CutCornerShape(5.dp),
+                    colors = ButtonDefaults.buttonColors(Color.Black),
+                    modifier = Modifier.padding(10.dp)){
+                    Text(text = "Next")
+                }
             }
 
 
